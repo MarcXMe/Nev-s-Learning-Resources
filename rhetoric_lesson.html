@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 7 English - Analyzing Persuasion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .lesson-content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9ff;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .definition-box {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .examples {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .examples h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .example {
+            font-style: italic;
+            margin: 8px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .activity-box {
+            background: #d1ecf1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .classification-activity {
+            background: #f8d7da;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .question {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .radio-option:hover {
+            background: #e9ecef;
+        }
+
+        .radio-option input[type="radio"] {
+            margin: 0;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #ecf0f1;
+            border-radius: 3px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .summary-section {
+            background: #d4edda;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .lesson-content {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Analyzing Persuasion in Media Texts</h1>
+            <p>Year 7 English - Lesson 1</p>
+            <div style="margin: 15px 0;">
+                <input type="text" class="input-field" id="studentName" placeholder="Enter your name here..." style="background: rgba(255,255,255,0.9); max-width: 300px; margin: 0 auto; display: block;">
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="lesson-content">
+            <!-- Introduction Section -->
+            <div class="section" id="section1">
+                <h2>🎯 Learning Intentions</h2>
+                <p>Today we'll explore different ways people persuade others and learn to identify persuasive devices in sentences.</p>
+                
+                <div class="activity-box">
+                    <h4>🤔 Reflection Activity</h4>
+                    <p><strong>Think about the last week:</strong> When did you try to persuade someone? What did you say to convince them?</p>
+                    <textarea class="input-field" id="reflection1" placeholder="Describe a time you tried to persuade someone..." rows="3"></textarea>
+                    
+                    <p><strong>What helped persuade them?</strong> What would you do differently?</p>
+                    <textarea class="input-field" id="reflection2" placeholder="What worked? What would you change?" rows="3"></textarea>
+                </div>
+            </div>
+
+            <!-- Rhetoric Section -->
+            <div class="section hidden" id="section2">
+                <h2>🎪 Rhetoric - The Art of Persuasion</h2>
+                
+                <div class="definition-box">
+                    <h4>Definition:</h4>
+                    <p><strong>Rhetoric</strong> = Language tools (words or phrases) used to persuade people.</p>
+                </div>
+
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <div class="example">"His rhetoric was really persuasive. I am going to get my mobile licence."</div>
+                    <div class="example">"The principal's rhetoric for mobile licences did not convince the students during the assembly."</div>
+                </div>
+
+                <div class="activity-box">
+                    <h4>✍️ Your Turn</h4>
+                    <p>Write your own sentence using the word "rhetoric":</p>
+                    <textarea class="input-field" id="rhetoric-example" placeholder="Write a sentence using 'rhetoric'..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <!-- Logos Section -->
+            <div class="section hidden" id="section3">
+                <h2>🧠 Logos - Logic and Reason</h2>
+                
+                <div class="definition-box">
+                    <h4>Definition:</h4>
+                    <p><strong>Logos</strong> = Rhetoric that uses logic to persuade, commonly using cause and effect statements with evidence and examples.</p>
+                </div>
+
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <div class="example">"If we all get our mobile licence, then the teacher will allow us to use phones in class."</div>
+                    <div class="example">"If we are required to have a mobile phone licence, then parents will not be able to keep their children safe."</div>
+                </div>
+
+                <div class="activity-box">
+                    <h4>✍️ Your Turn</h4>
+                    <p>Create your own logos statement using "If... then..." about school uniforms:</p>
+                    <textarea class="input-field" id="logos-example" placeholder="If students wear uniforms, then..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <!-- Pathos Section -->
+            <div class="section hidden" id="section4">
+                <h2>❤️ Pathos - Emotional Appeals</h2>
+                
+                <div class="definition-box">
+                    <h4>Definition:</h4>
+                    <p><strong>Pathos</strong> = Rhetoric that appeals to people's emotions and feelings (happy, sad, fearful, excited, etc.)</p>
+                </div>
+
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <div class="example">"Parents are terrified about what their children might be doing with mobile phones."</div>
+                    <div class="example">"Parents are excited about what their children might be doing with mobile phones."</div>
+                </div>
+
+                <div class="activity-box">
+                    <h4>✍️ Your Turn</h4>
+                    <p>Write a pathos statement about homework that appeals to emotions:</p>
+                    <textarea class="input-field" id="pathos-example" placeholder="Create an emotional statement about homework..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <!-- Ethos Section -->
+            <div class="section hidden" id="section5">
+                <h2>🤝 Ethos - Values and Beliefs</h2>
+                
+                <div class="definition-box">
+                    <h4>Definition:</h4>
+                    <p><strong>Ethos</strong> = Rhetoric that connects with the audience through shared beliefs or values (helps people feel they belong)</p>
+                </div>
+
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <div class="example">"Traditionally, milestones like driving a car have been marked with licences."</div>
+                    <div class="example">"It would be un-Australian to require a licence to use a mobile."</div>
+                </div>
+
+                <div class="activity-box">
+                    <h4>✍️ Your Turn</h4>
+                    <p>Create an ethos statement about sports that appeals to shared Australian values:</p>
+                    <textarea class="input-field" id="ethos-example" placeholder="Write about sports and Australian values..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <!-- Language-Based Section -->
+            <div class="section hidden" id="section6">
+                <h2>📝 Language-Based Rhetoric</h2>
+                
+                <div class="definition-box">
+                    <h4>Definition:</h4>
+                    <p><strong>Language-Based Rhetoric</strong> = Uses language features like exaggeration or rhetorical questions to persuade</p>
+                </div>
+
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <div class="example">"Do you really understand what your mobile is capable of?"</div>
+                    <div class="example">"How exciting would it be if all students were taught to use their mobile phone properly?"</div>
+                </div>
+
+                <div class="activity-box">
+                    <h4>✍️ Your Turn</h4>
+                    <p>Write a rhetorical question about online learning:</p>
+                    <textarea class="input-field" id="language-example" placeholder="Ask a rhetorical question about online learning..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <!-- Classification Activity -->
+            <div class="section hidden" id="section7">
+                <h2>🔍 Classification Challenge</h2>
+                <p>Now let's test your understanding! Classify each statement as <strong>Logos</strong>, <strong>Pathos</strong>, <strong>Ethos</strong>, or <strong>Language-based</strong>:</p>
+
+                <div class="question">
+                    <p><strong>1.</strong> "Students will feel really proud when they get their mobile licence."</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="logos"> Logos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="pathos"> Pathos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="ethos"> Ethos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="language"> Language-based
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><strong>2.</strong> "Do you really know what children get up to on mobile phones?"</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="logos"> Logos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="pathos"> Pathos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="ethos"> Ethos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="language"> Language-based
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><strong>3.</strong> "If people continue to message during class time, then the principal will not allow phones at school."</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="logos"> Logos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="pathos"> Pathos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="ethos"> Ethos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="language"> Language-based
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><strong>4.</strong> "It is the Australian way to look after our kids by bringing in mobile licences."</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="logos"> Logos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="pathos"> Pathos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="ethos"> Ethos
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="language"> Language-based
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn" id="checkAnswers">Check My Answers</button>
+                <div id="results"></div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="section hidden" id="section8">
+                <h2>📋 Lesson Complete!</h2>
+                
+                <div class="summary-section">
+                    <h4>🎉 Well Done!</h4>
+                    <p>You've successfully learned about the four types of rhetoric:</p>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li><strong>Logos</strong> - Logic and reason</li>
+                        <li><strong>Pathos</strong> - Emotional appeals</li>
+                        <li><strong>Ethos</strong> - Values and beliefs</li>
+                        <li><strong>Language-based</strong> - Rhetorical questions and literary devices</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h4>📝 Final Activity - School Uniforms</h4>
+                    <p>Create rhetorical statements about <strong>"Students should be able to wear casual clothes to school"</strong> using these sentence stems:</p>
+                    
+                    <div style="margin: 15px 0;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Logos (If...then...):</label>
+                        <textarea class="input-field" id="uniform-logos" placeholder="If students wear casual clothes, then..." rows="2"></textarea>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Pathos (People will feel...):</label>
+                        <textarea class="input-field" id="uniform-pathos" placeholder="People will feel... if they have to wear uniforms." rows="2"></textarea>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Ethos (Traditionally...):</label>
+                        <textarea class="input-field" id="uniform-ethos" placeholder="Traditionally..." rows="2"></textarea>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Language-based (Do you really think...?):</label>
+                        <textarea class="input-field" id="uniform-language" placeholder="Do you really think...?" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <button class="btn" id="generatePDF" style="background: linear-gradient(45deg, #e74c3c, #c0392b); font-size: 18px; padding: 15px 30px;">
+                    📄 Download Work Summary
+                </button>
+            </div>
+
+            <div class="navigation">
+                <button class="btn" id="prevBtn" onclick="previousSection()" disabled>← Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSection()">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 1;
+        const totalSections = 8;
+        const answers = {q1: 'pathos', q2: 'language', q3: 'logos', q4: 'ethos'};
+
+        function updateProgress() {
+            const progress = (currentSection / totalSections) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function showSection(sectionNum) {
+            // Hide all sections
+            for (let i = 1; i <= totalSections; i++) {
+                document.getElementById('section' + i).classList.add('hidden');
+            }
+            
+            // Show current section
+            document.getElementById('section' + sectionNum).classList.remove('hidden');
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = sectionNum === 1;
+            document.getElementById('nextBtn').disabled = sectionNum === totalSections;
+            
+            if (sectionNum === totalSections) {
+                document.getElementById('nextBtn').textContent = 'Complete ✓';
+                document.getElementById('nextBtn').style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+            } else {
+                document.getElementById('nextBtn').textContent = 'Next →';
+                document.getElementById('nextBtn').style.background = 'linear-gradient(45deg, #3498db, #2ecc71)';
+            }
+            
+            updateProgress();
+        }
+
+        function nextSection() {
+            if (currentSection < totalSections) {
+                currentSection++;
+                showSection(currentSection);
+            }
+        }
+
+        function previousSection() {
+            if (currentSection > 1) {
+                currentSection--;
+                showSection(currentSection);
+            }
+        }
+
+        // Check answers function
+        document.getElementById('checkAnswers').addEventListener('click', function() {
+            const results = document.getElementById('results');
+            let html = '<div style="margin-top: 20px;"><h4>Results:</h4>';
+            let score = 0;
+
+            for (let i = 1; i <= 4; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const isCorrect = selected && selected.value === answers[`q${i}`];
+                if (isCorrect) score++;
+                
+                html += `<p style="margin: 8px 0; padding: 8px; background: ${isCorrect ? '#d4edda' : '#f8d7da'}; border-radius: 5px;">
+                    <strong>Question ${i}:</strong> ${isCorrect ? '✓ Correct' : `✗ Incorrect (Answer: ${answers[`q${i}`]})`}
+                </p>`;
+            }
+            
+            html += `<p style="margin-top: 15px; font-size: 18px; font-weight: bold; color: ${score >= 3 ? '#27ae60' : '#e74c3c'};">
+                Score: ${score}/4 ${score >= 3 ? '🎉' : '📚 Keep practicing!'}
+            </p></div>`;
+            
+            results.innerHTML = html;
+        });
+
+        // Generate downloadable work summary
+        document.getElementById('generatePDF').addEventListener('click', function() {
+            const studentName = document.getElementById('studentName').value || 'Student';
+            const currentDate = new Date();
+            const dateStr = currentDate.toLocaleDateString('en-AU');
+            const timeStr = currentDate.toLocaleTimeString('en-AU');
+            
+            // Create a formatted text document
+            let content = `YEAR 7 ENGLISH - RHETORIC LESSON RESPONSES
+===========================================
+
+Student Name: ${studentName}
+Date: ${dateStr}
+Time: ${timeStr}
+
+===========================================
+
+REFLECTION ACTIVITIES:
+---------------------
+
+Personal Persuasion Experience:
+${document.getElementById('reflection1').value || '(No response provided)'}
+
+What Helped/Would Change:
+${document.getElementById('reflection2').value || '(No response provided)'}
+
+===========================================
+
+RHETORIC EXAMPLES:
+-----------------
+
+Rhetoric Example:
+${document.getElementById('rhetoric-example').value || '(No response provided)'}
+
+Logos Example:
+${document.getElementById('logos-example').value || '(No response provided)'}
+
+Pathos Example:
+${document.getElementById('pathos-example').value || '(No response provided)'}
+
+Ethos Example:
+${document.getElementById('ethos-example').value || '(No response provided)'}
+
+Language-based Example:
+${document.getElementById('language-example').value || '(No response provided)'}
+
+===========================================
+
+CLASSIFICATION ACTIVITY RESULTS:
+-------------------------------
+`;
+
+            for (let i = 1; i <= 4; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const answer = selected ? selected.value : 'Not answered';
+                const isCorrect = selected && selected.value === answers[`q${i}`];
+                content += `Question ${i}: ${answer} ${isCorrect ? '✓ Correct' : '✗ Incorrect (Answer: ' + answers[`q${i}`] + ')'}\n`;
+            }
+
+            content += `
+===========================================
+
+FINAL ACTIVITY - SCHOOL UNIFORMS:
+---------------------------------
+
+Logos Statement:
+${document.getElementById('uniform-logos').value || '(No response provided)'}
+
+Pathos Statement:
+${document.getElementById('uniform-pathos').value || '(No response provided)'}
+
+Ethos Statement:
+${document.getElementById('uniform-ethos').value || '(No response provided)'}
+
+Language-based Statement:
+${document.getElementById('uniform-language').value || '(No response provided)'}
+
+===========================================
+End of Report
+`;
+
+            // Create and download the file
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${studentName.replace(/\s+/g, '_')}_Rhetoric_Lesson_${dateStr.replace(/\//g, '-')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        });
+
+        // Initialize
+        showSection(1);
+    </script>
+</body>
+</html>
