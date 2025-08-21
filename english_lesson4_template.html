@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 7 English Lesson 4 - Ethical Rhetoric</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .lesson-header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lesson-header h1 {
+            color: #5a67d8;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .lesson-header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            color: #4c51bf;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .ethos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .ethos-card {
+            background: linear-gradient(145deg, #e0f2fe, #0ea5e9);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #0284c7;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: white;
+        }
+
+        .ethos-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .ethos-card h4 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .example-box {
+            background: #f0f7ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .activity-box {
+            background: linear-gradient(145deg, #ecfdf5, #d1fae5);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .activity-title {
+            color: #047857;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .classification-item {
+            background: #fafafa;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #6366f1;
+        }
+
+        .answer-reveal {
+            background: #e0f2fe;
+            border: 1px solid #0284c7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .reveal-btn {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-btn:hover {
+            background: #0369a1;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .answer-select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 14px;
+            background: white;
+        }
+
+        .large-text-area {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .pphav-box {
+            background: linear-gradient(145deg, #fef3c7, #f59e0b);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pphav-title {
+            color: #92400e;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .patriot-box {
+            background: linear-gradient(145deg, #fee2e2, #fca5a5);
+            border: 2px solid #dc2626;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .progress-box {
+            background: linear-gradient(145deg, #ddd6fe, #a78bfa);
+            border: 2px solid #7c3aed;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .independent-task {
+            background: linear-gradient(145deg, #fef3c7, #fbbf24);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .independent-task h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+
+        .reading-routine {
+            background: linear-gradient(145deg, #f3e8ff, #c4b5fd);
+            border: 2px solid #8b5cf6;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .reading-routine h3 {
+            color: #6b21a8;
+            margin-bottom: 15px;
+        }
+
+        .download-section {
+            background: linear-gradient(145deg, #dcfce7, #86efac);
+            border: 2px solid #16a34a;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .download-btn {
+            background: #16a34a;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #15803d;
+        }
+
+        .progress-bar {
+            background: #e5e7eb;
+            height: 6px;
+            border-radius: 3px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            width: 0%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .highlight-words {
+            background: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #92400e;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .lesson-header h1 {
+                font-size: 2em;
+            }
+            
+            .ethos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="lesson-header">
+            <h1>Year 7 English</h1>
+            <div class="subtitle">Lesson 4 - Ethical Rhetoric</div>
+            <div style="margin: 20px 0;">
+                <label for="studentName" style="font-weight: bold; color: #4c51bf;">Student Name:</label>
+                <input type="text" id="studentName" placeholder="Enter your name here" 
+                       style="margin-left: 10px; padding: 8px 12px; border: 2px solid #667eea; border-radius: 6px; font-size: 16px;">
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </div>
+
+        <!-- Review Section -->
+        <div class="section">
+            <h2 class="section-title">📚 Review - Previous Learning</h2>
+            <div class="ethos-grid">
+                <div class="ethos-card">
+                    <h4>✅ Reviewed understanding of pathos</h4>
+                    <p>Emotional appeals and persuasive techniques</p>
+                </div>
+                <div class="ethos-card">
+                    <h4>✅ Explored pathos more deeply</h4>
+                    <p>SHAPPEIT framework for emotive rhetoric</p>
+                </div>
+                <div class="ethos-card">
+                    <h4>✅ Emotive language</h4>
+                    <p>From "excited" to "disappointed" - changing emotional tone</p>
+                </div>
+                <div class="ethos-card">
+                    <h4>✅ Self interest statements</h4>
+                    <p>"Becoming a vegetarian will improve your health"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Intention -->
+        <div class="section">
+            <h2 class="section-title">🎯 Learning Intention</h2>
+            <p><strong>To explore and identify examples of ethos.</strong></p>
+        </div>
+
+        <!-- Ethos Overview -->
+        <div class="section">
+            <h2 class="section-title">🏛️ Ethos - Appeals to 'Character'</h2>
+            <p><strong>Ethos:</strong></p>
+            <ul>
+                <li>Appeals to audience's belief that a person, place, organisation or nation can have a character</li>
+                <li>Effective for engaging audiences with similar beliefs and values</li>
+                <li>Audiences could misinterpret message</li>
+                <li>Generates a 'gut feeling' response (does not rely on evidence)</li>
+            </ul>
+
+            <div class="pphav-box">
+                <div class="pphav-title">Remember PPHAV:</div>
+                <div style="font-size: 1.1em; color: #92400e;">
+                    <strong>P</strong>atriotism and nationalism | <strong>P</strong>rogress | <strong>H</strong>istory and tradition<br>
+                    <strong>A</strong>uthority | <strong>V</strong>alues
+                </div>
+            </div>
+        </div>
+
+        <!-- Patriotism and Nationalism -->
+        <div class="section">
+            <h2 class="section-title">🇦🇺 Ethos - Patriotism and Nationalism</h2>
+            <div class="patriot-box">
+                <h4 style="color: #991b1b; margin-bottom: 10px;">Patriotism and Nationalism</h4>
+                <p style="color: #991b1b;">Appeals to the audience's national identity. Can be used to divide people when ideas and people are labelled.</p>
+                
+                <div class="example-box">
+                    <strong>Example:</strong> "As Australians we must stick together, and support locally made products."
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <div class="activity-title">Practice: Identify patriotic/nationalistic words</div>
+                
+                <div class="classification-item">
+                    <strong>1.</strong> "Protecting our natural resources is the most patriotic thing we can do."<br>
+                    <strong>Identify the patriotic words:</strong>
+                    <input type="text" class="answer-input" id="patriot1" placeholder="Which words appeal to patriotism?">
+                    <button class="reveal-btn" onclick="showSampleAnswer('patriot1', 'patriot1-answer')">Show Sample Answer</button>
+                    <div class="answer-reveal" id="patriot1-answer">
+                        <strong>Sample Answer:</strong> <span class="highlight-words">"our"</span> and <span class="highlight-words">"patriotic"</span> - appeals to national identity and duty
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>2.</strong> "Recycling is your patriotic duty."<br>
+                    <strong>Identify the patriotic words:</strong>
+                    <input type="text" class="answer-input" id="patriot2" placeholder="Which words appeal to patriotism?">
+                    <button class="reveal-btn" onclick="showSampleAnswer('patriot2', 'patriot2-answer')">Show Sample Answer</button>
+                    <div class="answer-reveal" id="patriot2-answer">
+                        <strong>Sample Answer:</strong> <span class="highlight-words">"patriotic duty"</span> - appeals to national responsibility
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>3.</strong> "It would be un-Australian to throw your rubbish on the street."<br>
+                    <strong>Identify the patriotic words:</strong>
+                    <input type="text" class="answer-input" id="patriot3" placeholder="Which words appeal to patriotism?">
+                    <button class="reveal-btn" onclick="showSampleAnswer('patriot3', 'patriot3-answer')">Show Sample Answer</button>
+                    <div class="answer-reveal" id="patriot3-answer">
+                        <strong>Sample Answer:</strong> <span class="highlight-words">"un-Australian"</span> - implies going against national values
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>4.</strong> "If you really love your home, there is no way that you would rubbish it."<br>
+                    <strong>Identify the patriotic words:</strong>
+                    <input type="text" class="answer-input" id="patriot4" placeholder="Which words appeal to patriotism?">
+                    <button class="reveal-btn" onclick="showSampleAnswer('patriot4', 'patriot4-answer')">Show Sample Answer</button>
+                    <div class="answer-reveal" id="patriot4-answer">
+                        <strong>Sample Answer:</strong> <span class="highlight-words">"love your home"</span> - appeals to emotional connection with place/country
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="section">
+            <h2 class="section-title">🚀 Ethos - Progress</h2>
+            <div class="progress-box">
+                <h4 style="color: #581c87; margin-bottom: 10px;">Progress</h4>
+                <p style="color: #581c87;">Use words that suggest the future will be better – without necessarily using evidence and examples.</p>
+                
+                <div class="example-box">
+                    <strong>Example:</strong> "If we embrace renewable energy, Australia's future will be cleaner and greener."
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <div class="activity-title">Compare Ethos vs Logos:</div>
+                
+                <div class="classification-item" style="background: #fef3c7; border-left-color: #d97706;">
+                    <strong>Ethos (Progress):</strong><br>
+                    "Recycling more plastic will mean our parks are cleaner and better for our animals."
+                </div>
+
+                <div class="classification-item" style="background: #f0fdf4; border-left-color: #16a34a;">
+                    <strong>Logos (Evidence):</strong><br>
+                    "Increasing our plastic recycling from 9% to 20% will remove 5 tonnes of plastic from our parks each year."
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress vs Logos Classification -->
+        <div class="section">
+            <h2 class="section-title">🔍 Classification Challenge</h2>
+            <div class="activity-box">
+                <div class="activity-title">Identify which statements use logos and which use progress ethos:</div>
+                
+                <div class="classification-item">
+                    <strong>1.</strong> "Increasing the number of plastic bags that we recycle protects native animals."
+                    <select class="answer-select" id="class-q1">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Progress Ethos">Progress Ethos</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q1', 'Progress Ethos')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q1-answer">
+                        <strong>Correct Answer:</strong> Progress Ethos (suggests better future without specific evidence)
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>2.</strong> "A 10% reduction in greenhouse gases will limit global warming to less than 1 degree Celsius."
+                    <select class="answer-select" id="class-q2">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Progress Ethos">Progress Ethos</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q2', 'Logos')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q2-answer">
+                        <strong>Correct Answer:</strong> Logos (uses specific statistics and evidence)
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>3.</strong> "Using your car less will keep the planet cool."
+                    <select class="answer-select" id="class-q3">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Progress Ethos">Progress Ethos</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q3', 'Progress Ethos')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q3-answer">
+                        <strong>Correct Answer:</strong> Progress Ethos (suggests better future without specific data)
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>4.</strong> "Switching your appliances off at the power point can reduce your carbon emissions by more than 12%."
+                    <select class="answer-select" id="class-q4">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Progress Ethos">Progress Ethos</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q4', 'Logos')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q4-answer">
+                        <strong>Correct Answer:</strong> Logos (provides specific percentage and measurable outcome)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Independent Task -->
+        <div class="independent-task">
+            <h3>📝 Independent Task</h3>
+            <p><strong>Review your learning about ethos.</strong></p>
+            <p>Write your own patriotic and progress statements on the topic:</p>
+            
+            <div class="example-box">
+                <strong>Topic:</strong> "Recycling will help keep our parks clean and green."
+            </div>
+
+            <div style="margin-top: 20px;">
+                <strong>Write your patriotic and progress statements here:</strong><br>
+                <textarea class="large-text-area" id="independent-work" placeholder="Create your own patriotic/nationalistic statements and progress statements based on the recycling topic. Try to include appeals to Australian identity and statements about a better future..."></textarea>
+            </div>
+        </div>
+
+        <!-- Daily Reading Routine -->
+        <div class="reading-routine">
+            <h3>📖 Daily Reading Routine</h3>
+            <ol>
+                <li>Choose something to read</li>
+                <li>Read for at least 20 to 30 minutes</li>
+                <li>After and perhaps during reading, make notes about what you've read (2 or more paragraphs)</li>
+                <li>If possible, have a chat about what you read with someone else</li>
+            </ol>
+        </div>
+
+        <!-- Review and Summary -->
+        <div class="section">
+            <h2 class="section-title">📋 Review and Summary</h2>
+            <p>Today you have:</p>
+            <ul>
+                <li>✅ Reviewed understanding of pathos</li>
+                <li>✅ Deepened understanding of ethos</li>
+                <li>✅ Identified the difference between patriotism and nationalism appeals</li>
+                <li>✅ Learned about progress statements</li>
+                <li>✅ Distinguished between ethos and logos appeals</li>
+            </ul>
+        </div>
+
+        <!-- Download Work Summary -->
+        <div class="download-section">
+            <h3 style="color: #166534; margin-bottom: 15px;">📄 Submit Your Work</h3>
+            <p style="margin-bottom: 20px;">Click the button below to download a summary of your work to submit to school as evidence of your learning engagement.</p>
+            <button class="download-btn" onclick="downloadWorkSummary()">Download Work Summary</button>
+        </div>
+    </div>
+
+    <script>
+        function showCorrectAnswer(selectId, correctAnswer) {
+            const select = document.getElementById(selectId);
+            const answerDiv = document.getElementById(selectId + '-answer');
+            const button = answerDiv.previousElementSibling;
+            
+            if (answerDiv.style.display === 'none' || answerDiv.style.display === '') {
+                answerDiv.style.display = 'block';
+                button.textContent = 'Hide Correct Answer';
+                button.style.background = '#dc2626';
+                
+                // Check if student's answer is correct
+                if (select.value === correctAnswer) {
+                    select.style.borderColor = '#16a34a';
+                    select.style.backgroundColor = '#f0fdf4';
+                } else if (select.value !== '') {
+                    select.style.borderColor = '#dc2626';
+                    select.style.backgroundColor = '#fef2f2';
+                }
+            } else {
+                answerDiv.style.display = 'none';
+                button.textContent = 'Show Correct Answer';
+                button.style.background = '#0284c7';
+                select.style.borderColor = '#d1d5db';
+                select.style.backgroundColor = 'white';
+            }
+            
+            updateProgress();
+        }
+
+        function showSampleAnswer(inputId, answerId) {
+            const answer = document.getElementById(answerId);
+            const button = answer.previousElementSibling;
+            
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                button.textContent = 'Hide Sample Answer';
+                button.style.background = '#dc2626';
+            } else {
+                answer.style.display = 'none';
+                button.textContent = 'Show Sample Answer';
+                button.style.background = '#0284c7';
+            }
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const totalAnswers = document.querySelectorAll('.answer-reveal').length;
+            const revealedAnswers = document.querySelectorAll('.answer-reveal[style*="block"]').length;
+            const progress = (revealedAnswers / totalAnswers) * 100;
+            
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function downloadWorkSummary() {
+            const studentName = document.getElementById('studentName').value.trim();
+            if (!studentName) {
+                alert('Please enter your name before downloading the work summary.');
+                return;
+            }
+
+            const currentDate = new Date();
+            const dateString = currentDate.toLocaleDateString('en-AU');
+            const timeString = currentDate.toLocaleTimeString('en-AU');
+
+            let summary = `YEAR 7 ENGLISH LESSON 4 - ETHICAL RHETORIC
+WORK SUMMARY
+
+Student Name: ${studentName}
+Date Completed: ${dateString}
+Time Completed: ${timeString}
+
+===============================================
+
+SECTION 1: PATRIOTIC/NATIONALISTIC LANGUAGE IDENTIFICATION
+Identify the patriotic words in these sentences:
+
+1. "Protecting our natural resources is the most patriotic thing we can do."
+   Student Answer: ${document.getElementById('patriot1').value || 'Not answered'}
+
+2. "Recycling is your patriotic duty."
+   Student Answer: ${document.getElementById('patriot2').value || 'Not answered'}
+
+3. "It would be un-Australian to throw your rubbish on the street."
+   Student Answer: ${document.getElementById('patriot3').value || 'Not answered'}
+
+4. "If you really love your home, there is no way that you would rubbish it."
+   Student Answer: ${document.getElementById('patriot4').value || 'Not answered'}
+
+===============================================
+
+SECTION 2: LOGOS VS PROGRESS ETHOS CLASSIFICATION
+Identify which statements use logos and which use progress ethos:
+
+1. "Increasing the number of plastic bags that we recycle protects native animals."
+   Student Answer: ${document.getElementById('class-q1').value || 'Not answered'}
+   Correct Answer: Progress Ethos
+
+2. "A 10% reduction in greenhouse gases will limit global warming to less than 1 degree Celsius."
+   Student Answer: ${document.getElementById('class-q2').value || 'Not answered'}
+   Correct Answer: Logos
+
+3. "Using your car less will keep the planet cool."
+   Student Answer: ${document.getElementById('class-q3').value || 'Not answered'}
+   Correct Answer: Progress Ethos
+
+4. "Switching your appliances off at the power point can reduce your carbon emissions by more than 12%."
+   Student Answer: ${document.getElementById('class-q4').value || 'Not answered'}
+   Correct Answer: Logos
+
+===============================================
+
+SECTION 3: INDEPENDENT TASK
+Write your own patriotic and progress statements on recycling:
+
+${document.getElementById('independent-work').value || 'No response provided'}
+
+===============================================
+
+LEARNING OBJECTIVES COVERED:
+✓ Reviewed understanding of pathos and emotive rhetoric
+✓ Deepened understanding of ethos through the PPHAV framework
+✓ Identified patriotism and nationalism appeals in language
+✓ Learned about progress statements and their persuasive power
+✓ Distinguished between ethos (character appeals) and logos (logical appeals)
+✓ Created original examples of ethical rhetoric techniques
+
+This work summary demonstrates student engagement with Year 7 English
+curriculum content focusing on ethos and ethical rhetoric techniques.
+`;
+
+            // Create and download the file
+            const blob = new Blob([summary], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = `${studentName.replace(/[^a-zA-Z0-9]/g, '_')}_English_Lesson4_${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        // Initialize progress
+        updateProgress();
+    </script>
+</body>
+</html>
+    

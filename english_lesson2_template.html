@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 7 English Lesson 2 - Logical Rhetoric</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .lesson-header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lesson-header h1 {
+            color: #5a67d8;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .lesson-header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            color: #4c51bf;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .rhetoric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .rhetoric-card {
+            background: linear-gradient(145deg, #f8f9ff, #e6e9ff);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #5a67d8;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .rhetoric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .rhetoric-card h4 {
+            color: #4c51bf;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .logos-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .logos-type {
+            background: linear-gradient(145deg, #fff7ed, #fed7aa);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #f59e0b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logos-type h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .example-box {
+            background: #f0f7ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .activity-box {
+            background: linear-gradient(145deg, #ecfdf5, #d1fae5);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .activity-title {
+            color: #047857;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .classification-item {
+            background: #fafafa;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #6366f1;
+        }
+
+        .answer-reveal {
+            background: #e0f2fe;
+            border: 1px solid #0284c7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .reveal-btn {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-btn:hover {
+            background: #0369a1;
+        }
+
+        .independent-task {
+            background: linear-gradient(145deg, #fef3c7, #fbbf24);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .independent-task h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .answer-select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 14px;
+            background: white;
+        }
+
+        .large-text-area {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .download-section {
+            background: linear-gradient(145deg, #dcfce7, #86efac);
+            border: 2px solid #16a34a;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .download-btn {
+            background: #16a34a;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #15803d;
+        }
+
+        .reading-routine {
+            background: linear-gradient(145deg, #f3e8ff, #c4b5fd);
+            border: 2px solid #8b5cf6;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .reading-routine h3 {
+            color: #6b21a8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .progress-bar {
+            background: #e5e7eb;
+            height: 6px;
+            border-radius: 3px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            width: 0%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .lesson-header h1 {
+                font-size: 2em;
+            }
+            
+            .rhetoric-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logos-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="lesson-header">
+            <h1>Year 7 English</h1>
+            <div class="subtitle">Lesson 2 - Logical Rhetoric</div>
+            <div style="margin: 20px 0;">
+                <label for="studentName" style="font-weight: bold; color: #4c51bf;">Student Name:</label>
+                <input type="text" id="studentName" placeholder="Enter your name here" 
+                       style="margin-left: 10px; padding: 8px 12px; border: 2px solid #667eea; border-radius: 6px; font-size: 16px;">
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </div>
+
+        <!-- Review Section -->
+        <div class="section">
+            <h2 class="section-title">📚 Review - Key Terms</h2>
+            <div class="rhetoric-grid">
+                <div class="rhetoric-card">
+                    <h4>Rhetoric</h4>
+                    <p>Persuasive device used to convince an audience</p>
+                </div>
+                <div class="rhetoric-card">
+                    <h4>Logos</h4>
+                    <p>Logical appeals that use reason and facts</p>
+                </div>
+                <div class="rhetoric-card">
+                    <h4>Pathos</h4>
+                    <p>Emotional appeals that target feelings</p>
+                </div>
+                <div class="rhetoric-card">
+                    <h4>Ethos</h4>
+                    <p>Ethical appeals based on values and credibility</p>
+                </div>
+                <div class="rhetoric-card">
+                    <h4>Language-based Rhetoric</h4>
+                    <p>Literary devices like metaphors and questions</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classification Practice -->
+        <div class="section">
+            <h2 class="section-title">🎯 Classification Practice</h2>
+            <div class="activity-box">
+                <div class="activity-title">Classify these rhetorical devices as: Logos, Pathos, Ethos, or Language-based</div>
+                
+                <div class="classification-item">
+                    <strong>1.</strong> "Would you let your child drive a car without a licence?"
+                    <select class="answer-select" id="class-q1">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Pathos">Pathos</option>
+                        <option value="Ethos">Ethos</option>
+                        <option value="Language-based">Language-based</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q1', 'Language-based')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q1-answer">
+                        <strong>Correct Answer:</strong> Language-based (rhetorical question)
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>2.</strong> "Teachers will get frustrated with the licence if students cannot use them correctly."
+                    <select class="answer-select" id="class-q2">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Pathos">Pathos</option>
+                        <option value="Ethos">Ethos</option>
+                        <option value="Language-based">Language-based</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q2', 'Pathos')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q2-answer">
+                        <strong>Correct Answer:</strong> Pathos (appeals to teachers' emotions)
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>3.</strong> "It would be unpatriotic not to introduce a licence for mobile phones for year 7."
+                    <select class="answer-select" id="class-q3">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Pathos">Pathos</option>
+                        <option value="Ethos">Ethos</option>
+                        <option value="Language-based">Language-based</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q3', 'Ethos')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q3-answer">
+                        <strong>Correct Answer:</strong> Ethos (appeals to patriotic values)
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>4.</strong> "If students have access to mobile phones, then they will become addicted to them."
+                    <select class="answer-select" id="class-q4">
+                        <option value="">Select your answer...</option>
+                        <option value="Logos">Logos</option>
+                        <option value="Pathos">Pathos</option>
+                        <option value="Ethos">Ethos</option>
+                        <option value="Language-based">Language-based</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('class-q4', 'Logos')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="class-q4-answer">
+                        <strong>Correct Answer:</strong> Logos (logical cause and effect)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Intention -->
+        <div class="section">
+            <h2 class="section-title">🎯 Learning Intention</h2>
+            <p><strong>To explore and identify different types of logos.</strong></p>
+        </div>
+
+        <!-- Logos Overview -->
+        <div class="section">
+            <h2 class="section-title">🧠 Logos - Logical Rhetoric</h2>
+            <p><strong>Logos:</strong></p>
+            <ul>
+                <li>Uses logic to persuade</li>
+                <li>Appeals to an audience's intelligence</li>
+                <li>Shows respect for an audience</li>
+                <li>Uses facts about a situation</li>
+                <li>Regarded as more persuasive than other forms of rhetoric</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Remember DCCERS:</strong><br>
+                <strong>D</strong>efinitional | <strong>C</strong>ause and effect | <strong>C</strong>omparison<br>
+                <strong>E</strong>vidence and examples | <strong>R</strong>ebuttal | <strong>S</strong>peculative
+            </div>
+        </div>
+
+        <!-- Cause and Effect -->
+        <div class="section">
+            <h2 class="section-title">⚡ Logos - Cause and Effect</h2>
+            <div class="logos-types">
+                <div class="logos-type">
+                    <h4>What is Cause and Effect?</h4>
+                    <p>Statements about how specific actions lead to desirable or undesirable results.</p>
+                    
+                    <div class="example-box">
+                        <strong>Examples:</strong><br>
+                        "If vegetarianism continues to grow in popularity, then the meat industry will suffer."<br><br>
+                        "The growth in popularity of vegetarianism means the meat industry will suffer."
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <div class="activity-title">Practice: Convert to "If...then" format</div>
+                
+                <div class="classification-item">
+                    <strong>Original:</strong> "Using mobile phones effectively improves student grades."<br>
+                    <strong>Write your answer in "If...then" format:</strong>
+                    <input type="text" class="answer-input" id="convert1" placeholder="If... then...">
+                    <button class="reveal-btn" onclick="showSampleAnswer('convert1', 'convert1-answer')">Show Sample Answer</button>
+                    <div class="answer-reveal" id="convert1-answer">
+                        <strong>Sample Answer:</strong> "If students learn to use their mobile phones effectively, then their grades will improve."
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>Original:</strong> "Having additional bins encourages people to dispose of rubbish more thoughtfully."<br>
+                    <strong>Write your answer in "If...then" format:</strong>
+                    <input type="text" class="answer-input" id="convert2" placeholder="If... then...">
+                    <button class="reveal-btn" onclick="showSampleAnswer('convert2', 'convert2-answer')">Show Sample Answer</button>
+                    <div class="answer-reveal" id="convert2-answer">
+                        <strong>Sample Answer:</strong> "If people have access to additional bins, then they are likely to dispose of their rubbish more thoughtfully."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evidence and Examples -->
+        <div class="section">
+            <h2 class="section-title">📊 Logos - Evidence and Examples</h2>
+            <div class="logos-types">
+                <div class="logos-type">
+                    <h4>What is Evidence and Examples?</h4>
+                    <p>Using examples, especially statistics, case studies and research. This material is effective when used to support other logics.</p>
+                    
+                    <div class="example-box">
+                        <strong>Example:</strong><br>
+                        "Rates of extinction are increasing due to land clearing. Between 200 and 2000 extinctions occur every year."
+                    </div>
+
+                    <div class="example-box">
+                        <strong>Mobile Phone Example:</strong><br>
+                        "In schools that have introduced mobile phone licences, the rate of online bullying has dropped by 50%."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classification Activity -->
+        <div class="section">
+            <h2 class="section-title">🔍 Classification Challenge</h2>
+            <div class="activity-box">
+                <div class="activity-title">Classify as 'Cause and Effect' or 'Evidence and Examples':</div>
+                
+                <div class="classification-item">
+                    <strong>1.</strong> "If we continue to drive petrol cars, pollution in cities will only increase."
+                    <select class="answer-select" id="challenge-q1">
+                        <option value="">Select your answer...</option>
+                        <option value="Cause and Effect">Cause and Effect</option>
+                        <option value="Evidence and Examples">Evidence and Examples</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('challenge-q1', 'Cause and Effect')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="challenge-q1-answer">
+                        <strong>Correct Answer:</strong> Cause and Effect
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>2.</strong> "The use of solar panels in Australia reduced carbon dioxide emissions by trillions of tonnes in 2020."
+                    <select class="answer-select" id="challenge-q2">
+                        <option value="">Select your answer...</option>
+                        <option value="Cause and Effect">Cause and Effect</option>
+                        <option value="Evidence and Examples">Evidence and Examples</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('challenge-q2', 'Evidence and Examples')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="challenge-q2-answer">
+                        <strong>Correct Answer:</strong> Evidence and Examples
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>3.</strong> "Solar panels on private homes have made little impact on greenhouse gas emissions because other forms of pollution have increased."
+                    <select class="answer-select" id="challenge-q3">
+                        <option value="">Select your answer...</option>
+                        <option value="Cause and Effect">Cause and Effect</option>
+                        <option value="Evidence and Examples">Evidence and Examples</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('challenge-q3', 'Evidence and Examples')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="challenge-q3-answer">
+                        <strong>Correct Answer:</strong> Evidence and Examples
+                    </div>
+                </div>
+
+                <div class="classification-item">
+                    <strong>4.</strong> "Without increasing the number of electric vehicles in Australia, pollution will continue to rise."
+                    <select class="answer-select" id="challenge-q4">
+                        <option value="">Select your answer...</option>
+                        <option value="Cause and Effect">Cause and Effect</option>
+                        <option value="Evidence and Examples">Evidence and Examples</option>
+                    </select>
+                    <button class="reveal-btn" onclick="showCorrectAnswer('challenge-q4', 'Cause and Effect')">Show Correct Answer</button>
+                    <div class="answer-reveal" id="challenge-q4-answer">
+                        <strong>Correct Answer:</strong> Cause and Effect
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Independent Task -->
+        <div class="independent-task">
+            <h3>📝 Independent Task</h3>
+            <p><strong>Your turn to practice:</strong></p>
+            <ol>
+                <li>Review the different types of logos covered in today's lesson</li>
+                <li>Write your own cause and effect statements and evidence and example statements</li>
+            </ol>
+            
+            <div class="example-box">
+                <strong>Starting prompt:</strong> "Recycling will help keep our parks clean and green."<br>
+                <em>Convert this to different types of logical arguments!</em>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <strong>Write your examples here:</strong><br>
+                <textarea class="large-text-area" id="independent-work" placeholder="Write your cause and effect statements and evidence examples here. Try to create at least 3-4 different examples using the techniques learned in this lesson..."></textarea>
+            </div>
+        </div>
+
+        <!-- Daily Reading Routine -->
+        <div class="reading-routine">
+            <h3>📖 Daily Reading Routine</h3>
+            <ol>
+                <li>Choose something to read</li>
+                <li>Read for at least 20 to 30 minutes</li>
+                <li>After and perhaps during reading, make notes about what you've read (2 or more paragraphs)</li>
+                <li>If possible, have a chat about what you read with someone else</li>
+            </ol>
+        </div>
+
+        <!-- Review and Summary -->
+        <div class="section">
+            <h2 class="section-title">📋 Review and Summary</h2>
+            <p>Today you have:</p>
+            <ul>
+                <li>✅ Reviewed rhetorical devices</li>
+                <li>✅ Explored logos more deeply</li>
+                <li>✅ Identified different types of cause and effect statements</li>
+                <li>✅ Learned about evidence and example statements</li>
+            </ul>
+        </div>
+
+        <!-- Download Work Summary -->
+        <div class="download-section">
+            <h3 style="color: #166534; margin-bottom: 15px;">📄 Submit Your Work</h3>
+            <p style="margin-bottom: 20px;">Click the button below to download a summary of your work to submit to school as evidence of your learning engagement.</p>
+            <button class="download-btn" onclick="downloadWorkSummary()">Download Work Summary</button>
+        </div>
+    </div>
+
+    <script>
+        function showCorrectAnswer(selectId, correctAnswer) {
+            const select = document.getElementById(selectId);
+            const answerDiv = document.getElementById(selectId + '-answer');
+            const button = answerDiv.previousElementSibling;
+            
+            if (answerDiv.style.display === 'none' || answerDiv.style.display === '') {
+                answerDiv.style.display = 'block';
+                button.textContent = 'Hide Correct Answer';
+                button.style.background = '#dc2626';
+                
+                // Check if student's answer is correct
+                if (select.value === correctAnswer) {
+                    select.style.borderColor = '#16a34a';
+                    select.style.backgroundColor = '#f0fdf4';
+                } else if (select.value !== '') {
+                    select.style.borderColor = '#dc2626';
+                    select.style.backgroundColor = '#fef2f2';
+                }
+            } else {
+                answerDiv.style.display = 'none';
+                button.textContent = 'Show Correct Answer';
+                button.style.background = '#0284c7';
+                select.style.borderColor = '#d1d5db';
+                select.style.backgroundColor = 'white';
+            }
+            
+            updateProgress();
+        }
+
+        function showSampleAnswer(inputId, answerId) {
+            const answer = document.getElementById(answerId);
+            const button = answer.previousElementSibling;
+            
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                button.textContent = 'Hide Sample Answer';
+                button.style.background = '#dc2626';
+            } else {
+                answer.style.display = 'none';
+                button.textContent = 'Show Sample Answer';
+                button.style.background = '#0284c7';
+            }
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const totalAnswers = document.querySelectorAll('.answer-reveal').length;
+            const revealedAnswers = document.querySelectorAll('.answer-reveal[style*="block"]').length;
+            const progress = (revealedAnswers / totalAnswers) * 100;
+            
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function downloadWorkSummary() {
+            const studentName = document.getElementById('studentName').value.trim();
+            if (!studentName) {
+                alert('Please enter your name before downloading the work summary.');
+                return;
+            }
+
+            const currentDate = new Date();
+            const dateString = currentDate.toLocaleDateString('en-AU');
+            const timeString = currentDate.toLocaleTimeString('en-AU');
+
+            let summary = `YEAR 7 ENGLISH LESSON 2 - LOGICAL RHETORIC
+WORK SUMMARY
+
+Student Name: ${studentName}
+Date Completed: ${dateString}
+Time Completed: ${timeString}
+
+===============================================
+
+SECTION 1: CLASSIFICATION PRACTICE
+Classify these rhetorical devices as: Logos, Pathos, Ethos, or Language-based
+
+1. "Would you let your child drive a car without a licence?"
+   Student Answer: ${document.getElementById('class-q1').value || 'Not answered'}
+   Correct Answer: Language-based
+
+2. "Teachers will get frustrated with the licence if students cannot use them correctly."
+   Student Answer: ${document.getElementById('class-q2').value || 'Not answered'}
+   Correct Answer: Pathos
+
+3. "It would be unpatriotic not to introduce a licence for mobile phones for year 7."
+   Student Answer: ${document.getElementById('class-q3').value || 'Not answered'}
+   Correct Answer: Ethos
+
+4. "If students have access to mobile phones, then they will become addicted to them."
+   Student Answer: ${document.getElementById('class-q4').value || 'Not answered'}
+   Correct Answer: Logos
+
+===============================================
+
+SECTION 2: CAUSE AND EFFECT CONVERSION
+Convert to "If...then" format:
+
+1. Original: "Using mobile phones effectively improves student grades."
+   Student Answer: ${document.getElementById('convert1').value || 'Not answered'}
+
+2. Original: "Having additional bins encourages people to dispose of rubbish more thoughtfully."
+   Student Answer: ${document.getElementById('convert2').value || 'Not answered'}
+
+===============================================
+
+SECTION 3: CLASSIFICATION CHALLENGE
+Classify as 'Cause and Effect' or 'Evidence and Examples':
+
+1. "If we continue to drive petrol cars, pollution in cities will only increase."
+   Student Answer: ${document.getElementById('challenge-q1').value || 'Not answered'}
+   Correct Answer: Cause and Effect
+
+2. "The use of solar panels in Australia reduced carbon dioxide emissions by trillions of tonnes in 2020."
+   Student Answer: ${document.getElementById('challenge-q2').value || 'Not answered'}
+   Correct Answer: Evidence and Examples
+
+3. "Solar panels on private homes have made little impact on greenhouse gas emissions because other forms of pollution have increased."
+   Student Answer: ${document.getElementById('challenge-q3').value || 'Not answered'}
+   Correct Answer: Evidence and Examples
+
+4. "Without increasing the number of electric vehicles in Australia, pollution will continue to rise."
+   Student Answer: ${document.getElementById('challenge-q4').value || 'Not answered'}
+   Correct Answer: Cause and Effect
+
+===============================================
+
+SECTION 4: INDEPENDENT TASK
+Write your own cause and effect statements and evidence and example statements:
+
+${document.getElementById('independent-work').value || 'No response provided'}
+
+===============================================
+
+LEARNING OBJECTIVES COVERED:
+✓ Reviewed rhetorical devices (logos, pathos, ethos, language-based)
+✓ Explored logos more deeply
+✓ Identified different types of cause and effect statements
+✓ Learned about evidence and example statements
+✓ Practiced converting statements to logical formats
+✓ Created original examples of logical rhetoric
+
+This work summary demonstrates student engagement with Year 7 English
+curriculum content focusing on logical rhetoric and persuasive techniques.
+`;
+
+            // Create and download the file
+            const blob = new Blob([summary], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = `${studentName.replace(/[^a-zA-Z0-9]/g, '_')}_English_Lesson2_${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        // Initialize progress
+        updateProgress();
+    </script>
+</body>
+</html>
