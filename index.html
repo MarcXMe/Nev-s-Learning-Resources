@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Worksheets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"], input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .actions {
+            white-space: nowrap;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lesson Worksheets</h1>
+
+        <div class="form-group">
+            <input type="text" id="lessonName" placeholder="Lesson Name" required>
+        </div>
+        <div class="form-group">
+            <input type="url" id="worksheetUrl" placeholder="Worksheet URL (optional)">
+        </div>
+        <button onclick="addLesson()">Add Lesson</button>
+
+        <table id="lessonsTable">
+            <thead>
+                <tr>
+                    <th>Lesson Name</th>
+                    <th>Worksheet</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="lessonsBody">
+                <!-- Lessons will be added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLessons();
+        });
+
+        function addLesson() {
+            const lessonName = document.getElementById('lessonName').value.trim();
+            const worksheetUrl = document.getElementById('worksheetUrl').value.trim();
+
+            if (!lessonName) {
+                alert('Please enter a lesson name.');
+                return;
+            }
+
+            const lessons = JSON.parse(localStorage.getItem('lessons') || '[]');
+            lessons.push({ name: lessonName, url: worksheetUrl });
+            localStorage.setItem('lessons', JSON.stringify(lessons));
+
+            document.getElementById('lessonName').value = '';
+            document.getElementById('worksheetUrl').value = '';
+
+            loadLessons();
+        }
+
+        function loadLessons() {
+            const lessonsBody = document.getElementById('lessonsBody');
+            lessonsBody.innerHTML = '';
+
+            const lessons = JSON.parse(localStorage.getItem('lessons') || '[]');
+
+            lessons.forEach((lesson, index) => {
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = lesson.name;
+                row.appendChild(nameCell);
+
+                const urlCell = document.createElement('td');
+                if (lesson.url) {
+                    const link = document.createElement('a');
+                    link.href = lesson.url;
+                    link.textContent = 'Open Worksheet';
+                    link.target = '_blank';
+                    urlCell.appendChild(link);
+                } else {
+                    urlCell.textContent = 'No worksheet';
+                }
+                row.appendChild(urlCell);
+
+                const actionsCell = document.createElement('td');
+                actionsCell.className = 'actions';
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.onclick = function() { deleteLesson(index); };
+                actionsCell.appendChild(deleteButton);
+                row.appendChild(actionsCell);
+
+                lessonsBody.appendChild(row);
+            });
+        }
+
+        function deleteLesson(index) {
+            const lessons = JSON.parse(localStorage.getItem('lessons') || '[]');
+            lessons.splice(index, 1);
+            localStorage.setItem('lessons', JSON.stringify(lessons));
+            loadLessons();
+        }
+    </script>
+</body>
+</html>
